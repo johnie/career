@@ -1,12 +1,6 @@
 /*------------------------------------*\
     $DEFAULTS
 \*------------------------------------*/
-/**
- * inuit.css’ default variables. Redefine these in your `_vars.scss` file (found
- * in the inuit.css-web-template) to override them.
- */
-
-
 
 
 
@@ -48,13 +42,19 @@ $base-line-height:  24px!default;
 /**
  * Base font-family.
  */
-$base-font-family:  sans-serif!default;
+
+// Font family 
+@import url('//fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,300,600,700');
+
+$base-font-family: "ff-tisa-web-pro", Georgia, serif !default;
+$second-fontstack: "futura-pt", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, arial, sans-serif;
 
 /**
  * Default colour for objects’ borders etc.
  */
 $base-ui-color:     #ccc!default;
-
+$base-color:        #3D464D!default;
+$brand-black:       #1E1D24!default;
 
 
 
@@ -165,7 +165,7 @@ $close-quote:   null;
 /**
  * Brand stuff
  */
-$brand-color:       #4a8ec2!default;
+$brand-color:       #FE8500!default;
 $brand-face:        "Helvetica Neue", sans-serif!default;
 
 /**
@@ -183,8 +183,8 @@ $brand-round:        4px!default;
 /**
  * Which objects and abstractions would you like to use?
  */
-$use-grids:         false!default;
-$use-flexbox:       false!default;
+$use-grids:         true!default;
+$use-flexbox:       true!default;
 $use-columns:       false!default;
 $use-nav:           false!default;
 $use-options:       false!default;
@@ -202,7 +202,7 @@ $use-flyout:        false!default;
 $use-arrows:        false!default;
 $use-sprite:        false!default;
 $use-icon-text:     false!default;
-$use-beautons:      false!default;
+$use-beautons:      true!default;
 $use-lozenges:      false!default;
 $use-rules:         false!default;
 $use-stats:         false!default;

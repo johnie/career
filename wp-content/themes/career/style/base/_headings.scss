@@ -1,13 +1,11 @@
 /*------------------------------------*\
     $HEADINGS
 \*------------------------------------*/
-/**
- * As per: csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css
- *
- * When we define a heading we also define a corresponding class to go with it.
- * This allows us to apply, say, `class=alpha` to a `h3`; a double-stranded
- * heading hierarchy.
- */
+
+h1, h2, h3, h4, h5, h6{
+  font-family: $second-fontstack;
+}
+
 h1,.alpha{
     @include font-size($h1-size);
 }
@@ -57,4 +55,15 @@ hgroup .hN{
 }
 .kilo{
     @include font-size($kilo-size);
+}
+
+/** 
+ * Heading modifiers 
+ */
+
+.single-page--title{
+  font-size: 3.5em;
+  line-height: 1.2;
+  margin-bottom: 40px;
+  font-weight: 300;
 }
