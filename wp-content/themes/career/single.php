@@ -6,8 +6,6 @@
 
     <article class="article article--single container">
 
-      <h1 class="single-page--title"><?php the_title(); ?></h1>
-
       <?php the_content(); ?>
 
     </article>

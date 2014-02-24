@@ -6,9 +6,11 @@
   <title><?php wp_title(''); ?></title>
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>">
+  <script src="<?php bloginfo('template_url' ); ?>/js/modernizr.js"></script>
   <script type="text/javascript" src="//use.typekit.net/iau6lvh.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <?php wp_head(); ?>
+  <?php include (TEMPLATEPATH . '/parts/global-site-styles.php' ); ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -27,21 +29,22 @@
 
   <?php } ?>
 
-  <?php if(is_single()) { ?>
+  <?php if( !is_front_page() ) { ?>
 
     <hgroup class="single-page__callout">
-      <h3><?php echo "Open Positions"; ?></h3>
+      <h1 class="single-page--title"><?php echo get_the_title(); ?></h1>
     </hgroup>
 
   <?php } ?>
 
-    <section class="nav-bar">
-      <div class="nav-bar__container">
-        <h1 class="logo logo--small logo--nav-bar"><?php bloginfo('name'); ?></h1>
-        <a href="#" class="menu-btn"><span>Menu</span></a>
-      </div>
+    <div class="nav-bar">
+      <a href="<?php echo get_home_url(); ?>" class="logo--nav-bar" ><h1 class="logo logo--small logo--nav-bar"><?php bloginfo('name'); ?></h1></a>
+      <a href="#" class="menu-btn" id="menu-btn"><span>Menu</span></a>
+    </div>
+
+    <section class="gradient-expander">
     </section>
   
   </header>
 
-  <main class="main">
+  <main class="main" role="main">

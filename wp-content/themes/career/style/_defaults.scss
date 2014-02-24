@@ -52,7 +52,7 @@ $second-fontstack: "futura-pt", "HelveticaNeue-Light", "Helvetica Neue Light", "
 /**
  * Default colour for objects’ borders etc.
  */
-$base-ui-color:     #ccc!default;
+$base-ui-color:     #F7F7F7!default;
 $base-color:        #3D464D!default;
 $brand-black:       #1E1D24!default;
 
@@ -186,7 +186,7 @@ $brand-round:        4px!default;
 $use-grids:         true!default;
 $use-flexbox:       true!default;
 $use-columns:       false!default;
-$use-nav:           false!default;
+$use-nav:           true!default;
 $use-options:       false!default;
 $use-pagination:    false!default;
 $use-breadcrumb:    false!default;

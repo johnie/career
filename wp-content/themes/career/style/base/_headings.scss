@@ -56,14 +56,3 @@ hgroup .hN{
 .kilo{
     @include font-size($kilo-size);
 }
-
-/** 
- * Heading modifiers 
- */
-
-.single-page--title{
-  font-size: 3.5em;
-  line-height: 1.2;
-  margin-bottom: 40px;
-  font-weight: 300;
-}
