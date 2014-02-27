@@ -30,7 +30,7 @@ a{
       width: 100%;
       background-color: $brand-color;
       position: absolute;
-      bottom: 0;
+      bottom: -2px;
       left: 0;
       @include vendor(transform, scaleX(.8) translateY(4px));
 
@@ -80,7 +80,7 @@ a{
 }
 
 body:not(.home) .main{
-  padding: 50px;
+  padding: 50px 0;
 }
 
 .section{

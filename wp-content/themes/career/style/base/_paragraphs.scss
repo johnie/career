@@ -7,16 +7,16 @@
  */
 .lede,
 .lead{
-    @include font-size($base-font-size * 1.125);
+    @include font-size($base-font-size * 1.5);
 }
 
 p{
   color: $base-color;
   font-size: 1.4em;
   line-height: 1.68;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 
-  .section &{
+  .section &:last-of-type{
     margin-bottom: 0px;
   }
 }

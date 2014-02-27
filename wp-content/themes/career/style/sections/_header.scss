@@ -80,10 +80,10 @@
     background-color: $brand-black;
     z-index: 50;
   }
+}
 
-  .single &{
-    position: fixed;
-    top: 0;
-    z-index: 50;
-  }
+body:not(.home) .nav-bar{
+  position: fixed;
+  top: 0;
+  z-index: 50;
 }

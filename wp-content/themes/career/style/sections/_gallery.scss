@@ -1,0 +1,33 @@
+.gallery{
+  width: 100%;
+  position: relative;
+  
+  &:after{
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.gallery__item{
+  float: left !important;
+  position: relative;
+  width: 20%;
+  overflow: hidden;
+  padding-bottom: 20%;
+
+  img{
+    position: absolute;
+    max-width: 180%;
+    height: auto;
+    display: block;
+    top: 0;
+    left: 0;
+    @include vendor(transition, -webkit-filter .5s ease);
+    -webkit-filter: unquote('grayscale(100%)');
+  }
+
+  &:hover img{
+    -webkit-filter: unquote('grayscale(0%)'); 
+  }
+}
