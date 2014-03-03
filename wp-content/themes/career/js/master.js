@@ -35,6 +35,11 @@
   }
 
   openBtn.addEventListener( 'click', toggleOverlay );
+
+  var b = document.documentElement;
+  b.setAttribute('data-useragent',  navigator.userAgent);
+  b.setAttribute('data-platform', navigator.platform );
+  b.className += ((!!('ontouchstart' in window) || !!('onmsgesturechange' in window))?' touch':'');
 })();
 
 function fullHeight(el) {
@@ -51,6 +56,29 @@ function menuToggle(element) {
   menuBtn.click(function(e){
     e.preventDefault();
     $(this).toggleClass("open");
+  });
+}
+
+function contactToggle(element) {
+  var toggler     = $("a[href*=#" + element + "]"),
+      close       = $(".crosshair"),
+      formOverlay = $(".form-overlay");
+
+  toggler.on('click', function(e){
+    e.preventDefault();
+
+    formOverlay.toggleClass('form-open');
+    
+    if( formOverlay.hasClass('form-open') ) {
+      $("html").addClass('html--oh');
+    } else {
+      $("html").removeClass('html--oh');      
+    }
+  });
+
+  close.on('click', function(){
+    formOverlay.removeClass('form-open');
+    $("html").removeClass('html--oh');      
   });
 }
 
@@ -71,6 +99,7 @@ $(function(){
   fullHeight(".home .header");
   fixNav();
   menuToggle(".menu-btn");
+  contactToggle('contact');
 });
 
 $(window).resize(function(){

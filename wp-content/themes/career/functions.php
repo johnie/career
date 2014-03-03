@@ -27,6 +27,7 @@ require_once ( TEMPLATEPATH . '/theme-options.php' );
 add_action( 'add_meta_boxes', 'cd_meta_box_add' );
 function cd_meta_box_add() {
   add_meta_box( 'my-meta-box-id', 'Custom Page Styles', 'cd_meta_box_cb', 'post', 'normal', 'high' );
+  add_meta_box( 'my-meta-box-id', 'Custom Page Styles', 'cd_meta_box_cb', 'position', 'normal', 'high' );
   add_meta_box( 'my-meta-box-id', 'Custom Page Styles', 'cd_meta_box_cb', 'page', 'normal', 'high' );
 }
 function cd_meta_box_cb( $post ) {

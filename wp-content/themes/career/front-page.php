@@ -70,4 +70,70 @@
 
     </section>
 
+    <section class="section hard">
+      
+      <div class="gallery">
+        
+        <?php  
+          $get_page = get_page_by_title( 'Gallery' );
+
+          $args = array(
+            'post_type' => 'attachment',
+            'numberposts' => null,
+            'post_status' => null,
+            'orderby' => 'rand',
+            'post_parent' => $get_page->ID,
+            'numberposts' => -1,
+            'post_status' => 'inherit'
+          ); 
+          $attachments = get_posts($args);
+          if ($attachments) {
+            foreach ($attachments as $attachment) {
+        ?>
+  
+          <div class="gallery__item">
+            <?php echo wp_get_attachment_image($attachment->ID, 'thumbnail'); ?>
+          </div>
+
+        <?php
+            }
+          }
+        ?>
+
+      </div> 
+    
+    </section>
+
+  <section class="section">
+    <div class="nine-tenths flush--center">
+      <div class="grid">
+        <div class="grid__item two-fifths">
+          <h3 class="beta">Are you the next Symbioker?</h3>
+
+          <p class="krymp">We are looking for smart and talented individuals who want to contribute to our team in a big way. We want people who love the idea of chatting with clients and learning how to make our clients successful at what they do. Most of all, we want you to be passionate about working together with us to build something awesome!</p>
+        </div>
+        <div class="grid__item three-fifths">
+          <h3 class="beta">Find your fit!</h3>
+
+          <p>We are actively looking for new teammates in these positions:</p>
+
+          <ul class="jobs-list block-list">
+
+            <?php
+              query_posts( array( 'post_type' => 'position', 'showposts' => -1, 'orderby' => 'date', 'order' => 'ASC' ) );
+              if ( have_posts() ) : while ( have_posts() ) : the_post();
+            ?>
+
+              <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+
+            <?php endwhile; endif; wp_reset_query(); ?>
+
+          </ul>
+
+          <p>If you don't see a perfect fit in our open positions, that's okay! You can still <a href="#contact">tell us</a> about your special talents and why we should make you the next Symbioker.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 <?php get_footer(); ?>

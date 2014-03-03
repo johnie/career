@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title><?php wp_title(''); ?></title>
   <meta name="viewport" content="width=device-width">
+  <link rel="icon" type="image/png" href="<?php bloginfo('template_url' ); ?>/images/favicon.png">
   <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>">
   <script src="<?php bloginfo('template_url' ); ?>/js/modernizr.js"></script>
   <script type="text/javascript" src="//use.typekit.net/iau6lvh.js"></script>
@@ -24,7 +25,7 @@
     <section class="teaser">
       <h2 class="teaser__title">Be part of the Symbio journey.</h2>
       <p class="teaser__text">We are in exciting times at Symbio. Do you want to join us for the ride? We need help in several key areas.</p>
-      <a href="#apply" class="teaser__btn btn btn--small btn--orange">Work at Symbio</a>
+      <a href="#contact" class="teaser__btn btn btn--small btn--orange">Work at Symbio</a>
     </section>
 
   <?php } ?>

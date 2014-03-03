@@ -10,6 +10,11 @@
     @include font-size($base-font-size * 1.5);
 }
 
+.krymp{
+  @include font-size(20px);
+  line-height: 1.5;
+}
+
 p{
   color: $base-color;
   font-size: 1.4em;

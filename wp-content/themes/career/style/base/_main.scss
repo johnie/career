@@ -67,8 +67,8 @@ a{
 }
 
 .logo--large{
-  width: 350px;
-  height: 86px;
+  width: 280px;
+  height: 69px;
 }
 
 .logo--nav-bar{
@@ -90,4 +90,77 @@ body:not(.home) .main{
 .section--grey{
   background-color: $base-ui-color;
   @extend .cf;
+}
+
+.jobs-list{
+  font-family: $second-fontstack;
+  font-size: 24px;
+
+  a:before, a:after{
+    color: $brand-color;
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.3s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.3s;
+    -ms-transition: -ms-transform 0.2s, opacity 0.3s;
+    -o-transition: -o-transform 0.2s, opacity 0.3s;
+    transition: transform 0.2s, opacity 0.3s;
+  }
+
+  a:before{
+    content: '‹';
+    left: -10px;
+    @include vendor(transform, translateX(15px));
+  }
+
+  a:after{
+    content: '›';
+    right: -10px;
+    @include vendor(transform, translateX(-15px));
+  }
+
+  a{
+    position: relative;
+
+    &:hover:before, &:hover:after{
+      opacity: 1;
+      @include vendor(transform, translateX(0px));
+    }
+  }
+}
+
+.footer{
+  background:$brand-black url('images/footer.png') top center no-repeat;
+  @include vendor(background-size, cover);
+}
+
+.footer-list{
+  color: #fff;
+  font-family: $second-fontstack;
+  padding-top: 30px;
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 0;
+
+  li{
+    padding: 0 10px;
+    position: relative;
+
+    &:not(:last-child):after{
+      content: '・';
+      display: block;
+      right: -8px;
+      top: 50%;
+      @include vendor(transform, translateY(-50%));
+      position: absolute;
+    }
+  }
+
+  a{
+    color: #fff;
+
+    &:hover{
+      color: $brand-color;
+    }
+  }
 }

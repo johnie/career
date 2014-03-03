@@ -789,7 +789,7 @@ textarea:focus {
  * and over in your markup.
  */
 /* line 10, style/generic/_clearfix.scss */
-.cf:after, .section--grey:after, .nav:after, .teaser:after, .culture-list:after {
+.cf:after, .section--grey:after, .grid:after, .nav:after, .teaser:after, .culture-list:after, .expertise-list:after, .expertise-list li:after, .expertises:after {
   content: "";
   display: table;
   clear: both;
@@ -949,8 +949,8 @@ p a:hover:after {
 
 /* line 69, style/base/_main.scss */
 .logo--large {
-  width: 350px;
-  height: 86px;
+  width: 280px;
+  height: 69px;
 }
 
 /* line 74, style/base/_main.scss */
@@ -979,6 +979,102 @@ body:not(.home) .main {
 /* line 90, style/base/_main.scss */
 .section--grey {
   background-color: #f7f7f7;
+}
+
+/* line 95, style/base/_main.scss */
+.jobs-list {
+  font-family: "futura-pt", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, arial, sans-serif;
+  font-size: 24px;
+}
+/* line 99, style/base/_main.scss */
+.jobs-list a:before, .jobs-list a:after {
+  color: #fe8500;
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0.2s, opacity 0.3s;
+  -moz-transition: -moz-transform 0.2s, opacity 0.3s;
+  -ms-transition: -ms-transform 0.2s, opacity 0.3s;
+  -o-transition: -o-transform 0.2s, opacity 0.3s;
+  transition: transform 0.2s, opacity 0.3s;
+}
+/* line 110, style/base/_main.scss */
+.jobs-list a:before {
+  content: '‹';
+  left: -10px;
+  -webkit-transform: translateX(15px);
+  -moz-transform: translateX(15px);
+  -ms-transform: translateX(15px);
+  -o-transform: translateX(15px);
+  transform: translateX(15px);
+}
+/* line 116, style/base/_main.scss */
+.jobs-list a:after {
+  content: '›';
+  right: -10px;
+  -webkit-transform: translateX(-15px);
+  -moz-transform: translateX(-15px);
+  -ms-transform: translateX(-15px);
+  -o-transform: translateX(-15px);
+  transform: translateX(-15px);
+}
+/* line 122, style/base/_main.scss */
+.jobs-list a {
+  position: relative;
+}
+/* line 125, style/base/_main.scss */
+.jobs-list a:hover:before, .jobs-list a:hover:after {
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  -o-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
+/* line 132, style/base/_main.scss */
+.footer {
+  background: #1e1d24 url("images/footer.png") top center no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 137, style/base/_main.scss */
+.footer-list {
+  color: #fff;
+  font-family: "futura-pt", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, arial, sans-serif;
+  padding-top: 30px;
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+/* line 145, style/base/_main.scss */
+.footer-list li {
+  padding: 0 10px;
+  position: relative;
+}
+/* line 149, style/base/_main.scss */
+.footer-list li:not(:last-child):after {
+  content: '・';
+  display: block;
+  right: -8px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: absolute;
+}
+/* line 159, style/base/_main.scss */
+.footer-list a {
+  color: #fff;
+}
+/* line 162, style/base/_main.scss */
+.footer-list a:hover {
+  color: #fe8500;
 }
 
 /*------------------------------------*\
@@ -1087,13 +1183,21 @@ hgroup .hN {
 }
 
 /* line 13, style/base/_paragraphs.scss */
+.krymp {
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  line-height: 1.5;
+}
+
+/* line 18, style/base/_paragraphs.scss */
 p {
   color: #3d464d;
   font-size: 1.4em;
   line-height: 1.68;
   margin-bottom: 1em;
 }
-/* line 19, style/base/_paragraphs.scss */
+/* line 24, style/base/_paragraphs.scss */
 .section p:last-of-type {
   margin-bottom: 0px;
 }
@@ -1920,7 +2024,7 @@ label,
 /**
  * Very infrequently occuring grid wrappers as children of grid wrappers.
  */
-/* line 60, style/objects/_grids.scss */
+/* line 61, style/objects/_grids.scss */
 .grid > .grid {
   margin-left: 0;
 }
@@ -1928,12 +2032,13 @@ label,
 /**
  * Grid
  */
-/* line 68, style/objects/_grids.scss */
+/* line 69, style/objects/_grids.scss */
 .grid__item {
   display: inline-block;
   width: 100%;
   padding-left: 24px;
   vertical-align: top;
+  float: left;
 }
 
 /*------------------------------------*\
@@ -2382,52 +2487,74 @@ html.flexbox {
 }
 
 /*------------------------------------*\
-    $BEAUTONS.CSS
+    $BLOCK-LIST
 \*------------------------------------*/
 /**
- * beautons is a beautifully simple button toolkit.
+ * Create big blocky lists of content, e.g.:
  *
- * LICENSE
- * 
- * Copyright 2013 Harry Roberts
- * 
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * 
- * http://apache.org/licenses/LICENSE-2.0
- * 
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- * 
+   <ul class=block-list>
+      <li>Foo</li>
+      <li>Bar</li>
+      <li>Baz</li>
+      <li><a href=# class=block-list__link>Foo Bar Baz</a></li>
+   </ul>
+ *
+ * Extend this object in your theme stylesheet.
+ *
+ * Demo: jsfiddle.net/inuitcss/hR57q
+ *
  */
-/*!*
- * 
- * @csswizardry -- csswizardry.com/beautons
- * 
- */
+/* line 24, style/objects/_block-list.scss */
+.block-list,
+.block-list > li {
+  border: 0 solid #f7f7f7;
+}
+
+/* line 28, style/objects/_block-list.scss */
+.block-list {
+  list-style: none;
+  margin-left: 0;
+  border-top-width: 1px;
+}
+/* line 33, style/objects/_block-list.scss */
+.block-list > li {
+  border-bottom-width: 1px;
+  padding: 12px;
+}
+
+/* line 38, style/objects/_block-list.scss */
+.block-list__link {
+  display: block;
+  padding: 12px;
+  margin: -12px;
+}
+
 /*------------------------------------*\
-    $BASE
+  $BEAUTONS.CSS
 \*------------------------------------*/
 /**
- * Base button styles.
- *
- * 1. Allow us to better style box model properties.
- * 2. Line different sized buttons up a little nicer.
- * 3. Stop buttons wrapping and looking broken.
- * 4. Make buttons inherit font styles.
- * 5. Force all elements using beautons to appear clickable.
- * 6. Normalise box model styles.
- * 7. If the button’s text is 1em, and the button is (3 * font-size) tall, then
- *    there is 1em of space above and below that text. We therefore apply 1em
- *    of space to the left and right, as padding, to keep consistent spacing.
- * 8. Basic cosmetics for default buttons. Change or override at will.
- * 9. Don’t allow buttons to have underlines; it kinda ruins the illusion.
- */
-/* line 56, style/objects/_beautons.scss */
+* beautons is a beautifully simple button toolkit.
+*
+*/
+/*------------------------------------*\
+  $BASE
+\*------------------------------------*/
+/**
+* Base button styles.
+*
+* 1. Allow us to better style box model properties.
+* 2. Line different sized buttons up a little nicer.
+* 3. Stop buttons wrapping and looking broken.
+* 4. Make buttons inherit font styles.
+* 5. Force all elements using beautons to appear clickable.
+* 6. Normalise box model styles.
+* 7. If the button’s text is 1em, and the button is (3 * font-size) tall, then
+*    there is 1em of space above and below that text. We therefore apply 1em
+*    of space to the left and right, as padding, to keep consistent spacing.
+* 8. Basic cosmetics for default buttons. Change or override at will.
+* 9. Don’t allow buttons to have underlines; it kinda ruins the illusion.
+*/
+/* line 33, style/objects/_beautons.scss */
 .btn {
   display: inline-block;
   /* [1] */
@@ -2464,26 +2591,26 @@ html.flexbox {
   letter-spacing: 1px;
 }
 
-/* line 81, style/objects/_beautons.scss */
+/* line 58, style/objects/_beautons.scss */
 .btn, .btn:hover {
   text-decoration: none;
   /* [9] */
 }
-/* line 86, style/objects/_beautons.scss */
+/* line 63, style/objects/_beautons.scss */
 .btn:active, .btn:focus {
   outline: none;
 }
 
 /*------------------------------------*\
-    $SIZES
+  $SIZES
 \*------------------------------------*/
 /**
- * Button size modifiers.
- *
- * These all follow the same sizing rules as above; text is 1em, space around it
- * remains uniform.
- */
-/* line 104, style/objects/_beautons.scss */
+* Button size modifiers.
+*
+* These all follow the same sizing rules as above; text is 1em, space around it
+* remains uniform.
+*/
+/* line 81, style/objects/_beautons.scss */
 .btn--small {
   font-size: 16px;
   padding-left: 1.5em;
@@ -2491,14 +2618,14 @@ html.flexbox {
   line-height: 2.8;
 }
 
-/* line 111, style/objects/_beautons.scss */
+/* line 88, style/objects/_beautons.scss */
 .btn--large {
   padding-right: 1.5em;
   padding-left: 1.5em;
   line-height: 4;
 }
 
-/* line 117, style/objects/_beautons.scss */
+/* line 94, style/objects/_beautons.scss */
 .btn--huge {
   padding-right: 2em;
   padding-left: 2em;
@@ -2506,11 +2633,11 @@ html.flexbox {
 }
 
 /**
- * These buttons will fill the entirety of their container.
- *
- * 1. Remove padding so that widths and paddings don’t conflict.
- */
-/* line 128, style/objects/_beautons.scss */
+* These buttons will fill the entirety of their container.
+*
+* 1. Remove padding so that widths and paddings don’t conflict.
+*/
+/* line 105, style/objects/_beautons.scss */
 .btn--full {
   width: 100%;
   padding-right: 0;
@@ -2521,30 +2648,30 @@ html.flexbox {
 }
 
 /*------------------------------------*\
-    $FONT-SIZES
+  $FONT-SIZES
 \*------------------------------------*/
 /**
- * Button font-size modifiers.
- */
-/* line 145, style/objects/_beautons.scss */
+* Button font-size modifiers.
+*/
+/* line 122, style/objects/_beautons.scss */
 .btn--alpha {
   font-size: 3rem;
 }
 
-/* line 149, style/objects/_beautons.scss */
+/* line 126, style/objects/_beautons.scss */
 .btn--beta {
   font-size: 2rem;
 }
 
-/* line 153, style/objects/_beautons.scss */
+/* line 130, style/objects/_beautons.scss */
 .btn--gamma {
   font-size: 1rem;
 }
 
 /**
- * Make the button inherit sizing from its parent.
- */
-/* line 160, style/objects/_beautons.scss */
+* Make the button inherit sizing from its parent.
+*/
+/* line 137, style/objects/_beautons.scss */
 .btn--natural {
   vertical-align: baseline;
   font-size: inherit;
@@ -2554,44 +2681,70 @@ html.flexbox {
 }
 
 /*------------------------------------*\
-    $FUNCTIONS
+  $FUNCTIONS
 \*------------------------------------*/
 /**
- * Button function modifiers.
- */
+* Button function modifiers.
+*/
 /**
- * Positive actions; e.g. sign in, purchase, submit, etc.
- */
-/* line 185, style/objects/_beautons.scss */
+* Positive actions; e.g. sign in, purchase, submit, etc.
+*/
+/* line 162, style/objects/_beautons.scss */
 .btn--positive {
   background-color: #1e1d24;
   color: #fff;
 }
 
 /**
- * Negative actions; e.g. close account, delete photo, remove friend, etc.
- */
-/* line 193, style/objects/_beautons.scss */
+* Negative actions; e.g. close account, delete photo, remove friend, etc.
+*/
+/* line 170, style/objects/_beautons.scss */
 .btn--negative {
   background-color: #fff;
   color: #1e1d24;
 }
 
 /** 
- * Orange modifier; e.g. with brand color
- */
-/* line 202, style/objects/_beautons.scss */
+* Orange modifier; e.g. with brand color
+*/
+/* line 179, style/objects/_beautons.scss */
 .btn--orange {
   background-color: #fe8500;
+  color: #fff;
+  -webkit-transition: background-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease;
+  -ms-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+/* line 184, style/objects/_beautons.scss */
+.btn--orange:hover {
+  background-color: #ff9d32;
+  color: #fff;
+}
+
+/* line 190, style/objects/_beautons.scss */
+.btn--black {
+  background-color: #1e1d24;
+  color: #fff;
+  -webkit-transition: background-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease;
+  -ms-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+/* line 195, style/objects/_beautons.scss */
+.btn--black:hover {
+  background-color: #363440;
   color: #fff;
 }
 
 /**
- * Inactive, disabled buttons.
- * 
- * 1. Make the button look like normal text when hovered.
- */
-/* line 215, style/objects/_beautons.scss */
+* Inactive, disabled buttons.
+* 
+* 1. Make the button look like normal text when hovered.
+*/
+/* line 209, style/objects/_beautons.scss */
 .btn--inactive,
 .btn--inactive:hover,
 .btn--inactive:active,
@@ -2603,20 +2756,20 @@ html.flexbox {
 }
 
 /*------------------------------------*\
-    $STYLES
+  $STYLES
 \*------------------------------------*/
 /**
- * Button style modifiers.
- *
- * 1. Use an overly-large number to ensure completely rounded, pill-like ends.
- */
-/* line 233, style/objects/_beautons.scss */
+* Button style modifiers.
+*
+* 1. Use an overly-large number to ensure completely rounded, pill-like ends.
+*/
+/* line 227, style/objects/_beautons.scss */
 .btn--soft {
   border-radius: 200px;
   /* [1] */
 }
 
-/* line 237, style/objects/_beautons.scss */
+/* line 231, style/objects/_beautons.scss */
 .btn--hard {
   border-radius: 0;
 }
@@ -4238,38 +4391,339 @@ body:not(.home) .nav-bar {
 .gallery {
   width: 100%;
   position: relative;
+  background-color: #111;
 }
-/* line 5, style/sections/_gallery.scss */
+/* line 6, style/sections/_gallery.scss */
 .gallery:after {
   content: '';
   display: table;
   clear: both;
 }
 
-/* line 12, style/sections/_gallery.scss */
+/* line 13, style/sections/_gallery.scss */
 .gallery__item {
   float: left !important;
   position: relative;
-  width: 20%;
+  width: 16.666666%;
   overflow: hidden;
-  padding-bottom: 20%;
+  padding-bottom: 16.666666%;
 }
-/* line 19, style/sections/_gallery.scss */
+/* line 20, style/sections/_gallery.scss */
+.gallery__item:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  -webkit-transition: background-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease;
+  -ms-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+/* line 33, style/sections/_gallery.scss */
 .gallery__item img {
   position: absolute;
-  max-width: 180%;
+  width: 100%;
   height: auto;
   display: block;
   top: 0;
   left: 0;
-  -webkit-transition: -webkit-filter 0.5s ease;
-  -moz-transition: -webkit-filter 0.5s ease;
-  -ms-transition: -webkit-filter 0.5s ease;
-  -o-transition: -webkit-filter 0.5s ease;
-  transition: -webkit-filter 0.5s ease;
-  -webkit-filter: grayscale(100%);
 }
-/* line 30, style/sections/_gallery.scss */
-.gallery__item:hover img {
-  -webkit-filter: grayscale(0%);
+/* line 42, style/sections/_gallery.scss */
+.gallery__item:hover::before {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/* line 1, style/sections/_contactform.scss */
+.form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 50;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.2s ease-out, visibility 0.5s ease;
+  -moz-transition: opacity 0.2s ease-out, visibility 0.5s ease;
+  -ms-transition: opacity 0.2s ease-out, visibility 0.5s ease;
+  -o-transition: opacity 0.2s ease-out, visibility 0.5s ease;
+  transition: opacity 0.2s ease-out, visibility 0.5s ease;
+}
+/* line 14, style/sections/_contactform.scss */
+.form-overlay.form-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* line 20, style/sections/_contactform.scss */
+.html--oh {
+  overflow: hidden !important;
+}
+
+/* line 24, style/sections/_contactform.scss */
+.contact-form__wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: scroll;
+  z-index: 55;
+}
+
+/* line 34, style/sections/_contactform.scss */
+.contact-form {
+  position: relative;
+  z-index: 60;
+  max-width: 800px;
+  background-color: #fff;
+  margin: 50px auto;
+  padding: 50px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  font-family: "futura-pt", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, arial, sans-serif;
+}
+
+/* line 45, style/sections/_contactform.scss */
+.c-title {
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  position: relative;
+}
+
+/* line 51, style/sections/_contactform.scss */
+.c-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  margin-bottom: 30px;
+  padding: 6px 10px;
+  background-color: #F9F9F9;
+}
+/* line 59, style/sections/_contactform.scss */
+.c-input:focus {
+  border-color: #fe8500;
+  outline: none;
+}
+
+/* line 65, style/sections/_contactform.scss */
+.c-input--full {
+  width: 100%;
+}
+
+/* line 69, style/sections/_contactform.scss */
+.c-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #3d464d;
+}
+
+/* line 75, style/sections/_contactform.scss */
+.expertise-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 20px;
+}
+/* line 82, style/sections/_contactform.scss */
+.expertise-list li {
+  display: block;
+  margin-bottom: 3px;
+}
+
+/* line 89, style/sections/_contactform.scss */
+.expertise-checkbox {
+  position: relative;
+  float: left;
+  margin-right: 5px;
+  top: 5px;
+}
+
+/* line 96, style/sections/_contactform.scss */
+.c-textarea {
+  resize: vertical;
+  max-height: 300px;
+  margin-bottom: 20px;
+}
+
+/* line 102, style/sections/_contactform.scss */
+.crosshair {
+  font-size: 10px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 2em;
+  height: 2em;
+  cursor: pointer;
+  text-indent: -9999px;
+}
+/* line 113, style/sections/_contactform.scss */
+.crosshair:before, .crosshair:after {
+  content: '';
+  display: block;
+  width: 106%;
+  height: 2px;
+  background-color: #333;
+  position: absolute;
+  top: 50%;
+}
+/* line 123, style/sections/_contactform.scss */
+.crosshair:before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* line 127, style/sections/_contactform.scss */
+.crosshair:after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+/** 
+ * Contact Form 7 
+ */
+/* line 137, style/sections/_contactform.scss */
+.wpcf7 br {
+  display: none;
+}
+
+/* line 142, style/sections/_contactform.scss */
+.expertises {
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* line 148, style/sections/_contactform.scss */
+.wpcf7-list-item {
+  display: block;
+  position: relative;
+  margin-left: 0 !important;
+}
+/* line 153, style/sections/_contactform.scss */
+.wpcf7-list-item input[type="checkbox"] {
+  position: relative;
+  float: left;
+  margin-right: 5px;
+  top: 5px;
+}
+
+/* line 161, style/sections/_contactform.scss */
+.wpcf7-form-control-wrap {
+  display: block;
+}
+
+/* line 165, style/sections/_contactform.scss */
+.wpcf7-response-output {
+  margin: 2em 0 0 0;
+  padding: 0.5em 1em;
+  border: none !important;
+  color: #fff;
+  text-align: center;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+
+/* line 174, style/sections/_contactform.scss */
+div.wpcf7-mail-sent-ok {
+  background-color: #6BA949;
+}
+
+/* line 178, style/sections/_contactform.scss */
+div.wpcf7-mail-sent-ng {
+  background-color: #B94A48;
+}
+
+/* line 182, style/sections/_contactform.scss */
+div.wpcf7-spam-blocked {
+  background-color: #EE881A;
+}
+
+/* line 186, style/sections/_contactform.scss */
+div.wpcf7-validation-errors {
+  background-color: #F0C330;
+  color: #3d464d;
+}
+
+/* line 191, style/sections/_contactform.scss */
+span.wpcf7-form-control-wrap {
+  position: relative;
+}
+
+/* line 195, style/sections/_contactform.scss */
+span.wpcf7-not-valid-tip {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  z-index: 100;
+  background-color: #B94A48;
+  font-size: 10pt;
+  color: #fff;
+  display: block;
+  padding: 1px 5px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* line 208, style/sections/_contactform.scss */
+span.wpcf7-not-valid-tip-no-ajax {
+  color: #B94A48;
+  font-size: 10pt;
+  display: block;
+}
+
+/* line 214, style/sections/_contactform.scss */
+span.wpcf7-list-item {
+  margin-left: 0.5em;
+}
+
+/* line 218, style/sections/_contactform.scss */
+.wpcf7-display-none {
+  display: none;
+}
+
+/* line 222, style/sections/_contactform.scss */
+div.wpcf7 img.ajax-loader {
+  border: none;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+/* line 228, style/sections/_contactform.scss */
+div.wpcf7 .watermark {
+  color: #888;
 }

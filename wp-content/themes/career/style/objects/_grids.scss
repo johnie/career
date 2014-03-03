@@ -51,6 +51,7 @@
     margin-left:-$base-spacing-unit;
     list-style:none;
     margin-bottom:0;
+    @extend .cf;
 }
 
 
@@ -70,6 +71,7 @@
         width:100%;
         padding-left:$base-spacing-unit;
         vertical-align:top;
+        float: left;
         @if $global-border-box == false{
             @include vendor(box-sizing, border-box);
         }
