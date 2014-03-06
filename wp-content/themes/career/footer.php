@@ -4,7 +4,7 @@
   <div class="eight-tenths  flush--center text--center">
     <div class="grid">
       <div class="grid__item  one-whole">
-        <a href="#contact" class="btn btn--small btn--orange">Work with us?</a>
+        <a href="#contact" class="btn btn--small btn--orange btn--soft">Work with us?</a>
       </div>
       <div class="grid__item  one-whole">
         <ul class="footer-list  nav nav--banner">

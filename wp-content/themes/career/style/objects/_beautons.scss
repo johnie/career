@@ -78,6 +78,14 @@
 * These all follow the same sizing rules as above; text is 1em, space around it
 * remains uniform.
 */
+
+.btn--micro{
+  font-size: 11px;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  line-height: 2.8;
+}
+
 .btn--small{ 
   font-size: 16px;
   padding-left: 1.5em;

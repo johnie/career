@@ -25,7 +25,7 @@
     <section class="teaser">
       <h2 class="teaser__title">Be part of the Symbio journey.</h2>
       <p class="teaser__text">We are in exciting times at Symbio. Do you want to join us for the ride? We need help in several key areas.</p>
-      <a href="#contact" class="teaser__btn btn btn--small btn--orange">Work at Symbio</a>
+      <a href="#contact" class="teaser__btn btn btn--small btn--orange btn--soft">Work at Symbio</a>
     </section>
 
   <?php } ?>

@@ -1,0 +1,100 @@
+/*------------------------------------* 
+   $TEAM 
+*------------------------------------*/
+
+.team{
+  padding: 20px 0px;
+}
+
+.team__more{
+  text-align: center;
+  position: relative;
+  bottom: -25px;
+}
+
+.employee{
+  margin-bottom: 40px;
+
+  &:hover{
+    .employee__readmore{
+      opacity: 1;
+    }
+  }
+}
+
+  .employee__figure{
+    position: relative;
+  }
+
+    .employee__readmore{
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      left: 50%;
+      @include vendor(transform, translate(-50%, -50%));
+      background-color: rgba(30,29,36,.8);
+      text-align: center;
+      font-family: $second-fontstack;
+      color: #fff;
+      text-transform: uppercase;
+      width: 120px;
+      height: 120px;
+      @include vendor(border-radius, 50%);
+      @include vendor(transition, opacity .3s ease, background-color .3s ease);
+      opacity: 0;
+
+        &:hover{
+          background-color: $brand-black;
+          color: #fff;
+        }
+    }
+
+      .readmore__wrap{
+        display: inline-block;
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        @include vendor(transform, translate(-50%, -45%));
+        font-size: 15px;
+        line-height: 1.4;
+        font-weight: 300;
+  
+        span{
+          display: block;
+          font-weight: 500;
+          color: $brand-color;
+        }
+      }
+
+    .employee__image{
+      display: block;
+      border-radius: 4px;
+    }
+  
+
+  .employee__name{
+    font-size: 1.7em;
+  }
+
+    .employee__title{
+      display: block;
+      font-weight: 300;
+      position: relative;
+
+        &:before{
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: -10px;
+          left: 0;
+          width: 20%;
+          height: 2px;
+          background-color: $brand-color;
+        }
+    }
+
+  .employee__excerpt{
+    display: block;
+    margin-bottom: 1em;
+  }

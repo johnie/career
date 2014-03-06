@@ -28,11 +28,13 @@ add_action( 'add_meta_boxes', 'cd_meta_box_add' );
 function cd_meta_box_add() {
   add_meta_box( 'my-meta-box-id', 'Custom Page Styles', 'cd_meta_box_cb', 'post', 'normal', 'high' );
   add_meta_box( 'my-meta-box-id', 'Custom Page Styles', 'cd_meta_box_cb', 'position', 'normal', 'high' );
+  add_meta_box( 'my-meta-box-id', 'Custom Page Styles', 'cd_meta_box_cb', 'team', 'normal', 'high' );
   add_meta_box( 'my-meta-box-id', 'Custom Page Styles', 'cd_meta_box_cb', 'page', 'normal', 'high' );
 }
 function cd_meta_box_cb( $post ) {
   $values         = get_post_custom( $post->ID );
   $header_image   = isset( $values['header_image'] ) ? esc_attr( $values['header_image'][0] ) : '';
+  $header_position = isset( $values['header_position'] ) ? esc_attr( $values['header_position'][0] ) : '';
   $header_color   = isset( $values['header_color'] ) ? esc_attr( $values['header_color'][0] ) : '';
   wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
   ?>
@@ -40,6 +42,11 @@ function cd_meta_box_cb( $post ) {
   <p>
     <label for="header_image">Header Image</label>
     <input type="text" name="header_image" id="header_image" placeholder="http://" class="widefat" value="<?php echo $header_image; ?>">
+  </p>
+
+  <p>
+    <label for="header_position">Header Position</label>
+    <input type="text" name="header_position" id="header_position" placeholder="top / center / bottom" class="widefat" value="<?php echo $header_position; ?>">
   </p>
 
   <p>
@@ -63,6 +70,8 @@ function cd_meta_box_save( $post_id ) {
 
   if( isset( $_POST['header_image'] ) )
     update_post_meta( $post_id, 'header_image', wp_kses( $_POST['header_image'], $allowed ) );
+  if( isset( $_POST['header_position'] ) )
+    update_post_meta( $post_id, 'header_position', wp_kses( $_POST['header_position'], $allowed ) );
   if( isset( $_POST['header_color'] ) )
     update_post_meta( $post_id, 'header_color', wp_kses( $_POST['header_color'], $allowed ) );
 }
