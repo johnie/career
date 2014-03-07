@@ -1,4 +1,4 @@
-<?php  
+<?php
   // TEMPLATE NAME: Front page
 ?>
 
@@ -12,7 +12,7 @@
   ?>
 
     <section class="section">
-      <div class="container">
+      <div class="container" data-scroll-reveal="enter from the bottom after .3s">
      
         <h2 class="kilo"><?php echo the_field('frontpage_title'); ?></h2>
 
@@ -32,7 +32,7 @@
           $culture_page->the_post();
       ?>
   
-        <div class="container">
+        <div class="container" data-scroll-reveal="enter from the bottom after .3s">
           <h2 class="kilo"><?php echo the_field('frontpage_title'); ?></h2>
 
           <p><?php echo the_field('frontpage_intro'); ?></p>
@@ -62,7 +62,7 @@
 
       </div>
 
-      <div class="container">
+      <div class="container" data-scroll-reveal="enter from the bottom after .3s">
         <p>We get stuff done. We have fun. We test. We learn. We work well together. We think big. We care about the product we are building. We push boundaries.</p>
 
         <p>We love what we do & we take the time to do it right. <a href="/culture">Wanna know more?</a></p>

@@ -876,10 +876,25 @@ html {
   min-height: 100%;
 }
 
+/* line 10, style/base/_main.scss */
+body {
+  background-color: #111;
+}
+
+/* line 14, style/base/_main.scss */
+.page {
+  background-color: #fff;
+  -webkit-animation: teaser 1s 1s alternate backwards ease-out;
+  -moz-animation: teaser 1s 1s alternate backwards ease-out;
+  -ms-animation: teaser 1s 1s alternate backwards ease-out;
+  -o-animation: teaser 1s 1s alternate backwards ease-out;
+  animation: teaser 1s 1s alternate backwards ease-out;
+}
+
 /** 
  * Link defaults 
  */
-/* line 14, style/base/_main.scss */
+/* line 23, style/base/_main.scss */
 a {
   position: relative;
   color: #fe8500;
@@ -890,11 +905,11 @@ a {
   -o-transition: color 0.4s ease;
   transition: color 0.4s ease;
 }
-/* line 20, style/base/_main.scss */
+/* line 29, style/base/_main.scss */
 a:hover {
   color: #1e1d24;
 }
-/* line 26, style/base/_main.scss */
+/* line 35, style/base/_main.scss */
 p a:after {
   content: '';
   display: block;
@@ -917,7 +932,7 @@ p a:after {
   -o-transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
-/* line 43, style/base/_main.scss */
+/* line 52, style/base/_main.scss */
 p a:hover:after {
   -webkit-transform: translateY(-2px);
   -moz-transform: translateY(-2px);
@@ -928,7 +943,7 @@ p a:hover:after {
   visibility: visible;
 }
 
-/* line 52, style/base/_main.scss */
+/* line 61, style/base/_main.scss */
 .logo {
   display: block;
   color: #fff;
@@ -941,19 +956,19 @@ p a:hover:after {
   z-index: 110;
 }
 
-/* line 64, style/base/_main.scss */
+/* line 73, style/base/_main.scss */
 .logo--small {
   width: 180px;
   height: 45px;
 }
 
-/* line 69, style/base/_main.scss */
+/* line 78, style/base/_main.scss */
 .logo--large {
   width: 280px;
   height: 69px;
 }
 
-/* line 74, style/base/_main.scss */
+/* line 83, style/base/_main.scss */
 .logo--nav-bar {
   position: absolute;
   left: 5%;
@@ -966,27 +981,32 @@ p a:hover:after {
   z-index: 100;
 }
 
-/* line 82, style/base/_main.scss */
+/* line 91, style/base/_main.scss */
 body:not(.home) .main {
   padding: 50px 0;
 }
 
-/* line 86, style/base/_main.scss */
+/* line 95, style/base/_main.scss */
+.main {
+  min-height: 500px;
+}
+
+/* line 99, style/base/_main.scss */
 .section {
   padding: 7% 20px;
 }
 
-/* line 90, style/base/_main.scss */
+/* line 103, style/base/_main.scss */
 .section--grey {
   background-color: #f7f7f7;
 }
 
-/* line 95, style/base/_main.scss */
+/* line 108, style/base/_main.scss */
 .jobs-list {
   font-family: "futura-pt", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, arial, sans-serif;
   font-size: 24px;
 }
-/* line 99, style/base/_main.scss */
+/* line 112, style/base/_main.scss */
 .jobs-list a:before, .jobs-list a:after {
   color: #fe8500;
   position: absolute;
@@ -997,7 +1017,7 @@ body:not(.home) .main {
   -o-transition: -o-transform 0.2s, opacity 0.3s;
   transition: transform 0.2s, opacity 0.3s;
 }
-/* line 110, style/base/_main.scss */
+/* line 123, style/base/_main.scss */
 .jobs-list a:before {
   content: '‹';
   left: -10px;
@@ -1007,7 +1027,7 @@ body:not(.home) .main {
   -o-transform: translateX(15px);
   transform: translateX(15px);
 }
-/* line 116, style/base/_main.scss */
+/* line 129, style/base/_main.scss */
 .jobs-list a:after {
   content: '›';
   right: -10px;
@@ -1017,11 +1037,11 @@ body:not(.home) .main {
   -o-transform: translateX(-15px);
   transform: translateX(-15px);
 }
-/* line 122, style/base/_main.scss */
+/* line 135, style/base/_main.scss */
 .jobs-list a {
   position: relative;
 }
-/* line 125, style/base/_main.scss */
+/* line 138, style/base/_main.scss */
 .jobs-list a:hover:before, .jobs-list a:hover:after {
   opacity: 1;
   -webkit-transform: translateX(0px);
@@ -1031,7 +1051,7 @@ body:not(.home) .main {
   transform: translateX(0px);
 }
 
-/* line 132, style/base/_main.scss */
+/* line 145, style/base/_main.scss */
 .footer {
   background: #1e1d24 url("images/footer.png") top center no-repeat;
   -webkit-background-size: cover;
@@ -1041,7 +1061,7 @@ body:not(.home) .main {
   background-size: cover;
 }
 
-/* line 137, style/base/_main.scss */
+/* line 150, style/base/_main.scss */
 .footer-list {
   color: #fff;
   font-family: "futura-pt", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, arial, sans-serif;
@@ -1050,12 +1070,12 @@ body:not(.home) .main {
   font-size: 14px;
   margin-bottom: 0;
 }
-/* line 145, style/base/_main.scss */
+/* line 158, style/base/_main.scss */
 .footer-list li {
   padding: 0 10px;
   position: relative;
 }
-/* line 149, style/base/_main.scss */
+/* line 162, style/base/_main.scss */
 .footer-list li:not(:last-child):after {
   content: '・';
   display: block;
@@ -1068,11 +1088,11 @@ body:not(.home) .main {
   transform: translateY(-50%);
   position: absolute;
 }
-/* line 159, style/base/_main.scss */
+/* line 172, style/base/_main.scss */
 .footer-list a {
   color: #fff;
 }
-/* line 162, style/base/_main.scss */
+/* line 175, style/base/_main.scss */
 .footer-list a:hover {
   color: #fe8500;
 }
@@ -4236,7 +4256,42 @@ html.flexbox {
   min-height: 500px;
 }
 
-/* line 29, style/sections/_header.scss */
+@-webkit-keyframes teaser {
+  /* line 30, style/sections/_header.scss */
+  from {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes teaser {
+  /* line 30, style/sections/_header.scss */
+  from {
+    opacity: 0;
+  }
+}
+
+@-ms-keyframes teaser {
+  /* line 30, style/sections/_header.scss */
+  from {
+    opacity: 0;
+  }
+}
+
+@-o-keyframes teaser {
+  /* line 30, style/sections/_header.scss */
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes teaser {
+  /* line 30, style/sections/_header.scss */
+  from {
+    opacity: 0;
+  }
+}
+
+/* line 35, style/sections/_header.scss */
 .teaser {
   position: absolute;
   left: 5%;
@@ -4249,21 +4304,26 @@ html.flexbox {
   -o-transform: translateY(-65%);
   transform: translateY(-65%);
   z-index: 2;
+  -webkit-animation: teaser 1s 2s alternate backwards ease-out;
+  -moz-animation: teaser 1s 2s alternate backwards ease-out;
+  -ms-animation: teaser 1s 2s alternate backwards ease-out;
+  -o-animation: teaser 1s 2s alternate backwards ease-out;
+  animation: teaser 1s 2s alternate backwards ease-out;
 }
 
-/* line 40, style/sections/_header.scss */
+/* line 47, style/sections/_header.scss */
 .teaser__title {
   color: #fff;
   width: 100%;
   font-size: 70px;
   line-height: 80px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   font-weight: 600;
   text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 51, style/sections/_header.scss */
+/* line 58, style/sections/_header.scss */
 .teaser__text {
   color: #ccc;
   font-size: 26px;
@@ -4272,7 +4332,7 @@ html.flexbox {
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 59, style/sections/_header.scss */
+/* line 66, style/sections/_header.scss */
 .gradient-expander {
   position: absolute;
   width: 100%;
@@ -4287,7 +4347,7 @@ html.flexbox {
   z-index: 4;
 }
 
-/* line 73, style/sections/_header.scss */
+/* line 80, style/sections/_header.scss */
 .nav-bar {
   position: absolute;
   width: 100%;
@@ -4295,7 +4355,7 @@ html.flexbox {
   bottom: 0;
   left: 0;
 }
-/* line 81, style/sections/_header.scss */
+/* line 88, style/sections/_header.scss */
 .nav-bar.bg-active {
   position: fixed;
   top: 0;
@@ -4303,7 +4363,7 @@ html.flexbox {
   z-index: 50;
 }
 
-/* line 89, style/sections/_header.scss */
+/* line 96, style/sections/_header.scss */
 body:not(.home) .nav-bar {
   position: fixed;
   top: 0;
@@ -4410,15 +4470,16 @@ body:not(.home) .nav-bar {
   width: 100%;
   position: relative;
   background-color: #111;
+  overflow: hidden;
 }
-/* line 6, style/sections/_gallery.scss */
+/* line 7, style/sections/_gallery.scss */
 .gallery:after {
   content: '';
   display: table;
   clear: both;
 }
 
-/* line 13, style/sections/_gallery.scss */
+/* line 14, style/sections/_gallery.scss */
 .gallery__item {
   float: left !important;
   position: relative;
@@ -4426,7 +4487,7 @@ body:not(.home) .nav-bar {
   overflow: hidden;
   padding-bottom: 16.666666%;
 }
-/* line 20, style/sections/_gallery.scss */
+/* line 21, style/sections/_gallery.scss */
 .gallery__item:before {
   content: '';
   display: block;
@@ -4443,7 +4504,7 @@ body:not(.home) .nav-bar {
   -o-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
 }
-/* line 33, style/sections/_gallery.scss */
+/* line 34, style/sections/_gallery.scss */
 .gallery__item img {
   position: absolute;
   width: 100%;
@@ -4452,7 +4513,7 @@ body:not(.home) .nav-bar {
   top: 0;
   left: 0;
 }
-/* line 42, style/sections/_gallery.scss */
+/* line 43, style/sections/_gallery.scss */
 .gallery__item:hover::before {
   background-color: rgba(0, 0, 0, 0);
 }

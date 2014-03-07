@@ -23,9 +23,16 @@
   <?php if(is_front_page()) { ?>
   
     <section class="teaser">
-      <h2 class="teaser__title">Be part of the Symbio journey.</h2>
-      <p class="teaser__text">We are in exciting times at Symbio. Do you want to join us for the ride? We need help in several key areas.</p>
-      <a href="#contact" class="teaser__btn btn btn--small btn--orange btn--soft">Work at Symbio</a>
+      <?php  
+        $front_page = new WP_Query( 'page_id=15' );
+
+        while ( $front_page->have_posts() ) {
+          $front_page->the_post();
+      ?>
+        <h2 class="teaser__title"><?php the_field('frontpage_title'); ?></h2>
+        <p class="teaser__text"><?php the_field('frontpage_intro'); ?></p>
+        <a href="#contact" class="teaser__btn btn btn--small btn--orange btn--soft">Work at Symbio</a>
+      <?php } wp_reset_postdata(); ?>
     </section>
 
   <?php } ?>

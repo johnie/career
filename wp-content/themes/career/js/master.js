@@ -95,11 +95,24 @@ function fixNav(){
   });
 }
 
+function showMeTheGoods(elements, origin){
+  $.each($(elements), function(index, value){
+    var seconds = parseFloat(index / 6);
+    $(this).attr("data-scroll-reveal", "enter " + origin + ", over 1s, wait " + seconds + "s");
+  });
+}
+
 $(function(){
   fullHeight(".home .header");
   fixNav();
   menuToggle(".menu-btn");
   contactToggle('contact');
+  showMeTheGoods(".gallery__item", "top");
+  showMeTheGoods(".cl__item", "top");
+  showMeTheGoods(".employee", "left");
+  $(document).ready(function(){
+    window.scrollReveal = new scrollReveal();
+  });
 });
 
 $(window).resize(function(){

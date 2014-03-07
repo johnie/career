@@ -7,6 +7,15 @@ html{
     min-height:100%;
 }
 
+body{
+  background-color: #111;
+}
+
+.page{
+  background-color: #fff;
+  @include vendor(animation, teaser 1s 1s alternate backwards ease-out);
+}
+
 /** 
  * Link defaults 
  */
@@ -81,6 +90,10 @@ a{
 
 body:not(.home) .main{
   padding: 50px 0;
+}
+
+.main{
+  min-height: 500px;
 }
 
 .section{
