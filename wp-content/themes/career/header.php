@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="<?php bloginfo('template_url' ); ?>/images/favicon.png">
   <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>">
   <script src="<?php bloginfo('template_url' ); ?>/js/modernizr.js"></script>
-  <script type="text/javascript" src="//use.typekit.net/iau6lvh.js"></script>
+  <script type="text/javascript" src="//use.typekit.net/zoc3xxu.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <?php wp_head(); ?>
   <?php include (TEMPLATEPATH . '/parts/global-site-styles.php' ); ?>
