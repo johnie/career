@@ -93,6 +93,14 @@
 .hard--sides    { padding-right: 0!important; padding-left:  0!important; }
 
 
+/** 
+ * Max width helpers for container 
+ */
+
+.max-width--1200{
+    max-width: 1200px !important;
+}
+
 /**
  * Pull items full width of `.island` parents.
  */

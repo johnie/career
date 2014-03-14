@@ -12,3 +12,5 @@ sitemap.xml.gz
 wp-config.php
 
 wp-content/uploads/
+fabfile.py
+fabfile.pyc

@@ -1034,23 +1034,27 @@ body:not(.home) .main {
   }
 }
 @media only screen and (max-width: 480px) {
-  /* line 137, style/base/_main.scss */
+  /* line 108, style/base/_main.scss */
+  .section {
+    padding: 30px 20px;
+  }
+  /* line 139, style/base/_main.scss */
   .section .nine-tenths {
     width: 100% !important;
   }
 }
 
-/* line 143, style/base/_main.scss */
+/* line 145, style/base/_main.scss */
 .section--grey {
   background-color: #f7f7f7;
 }
 
-/* line 148, style/base/_main.scss */
+/* line 150, style/base/_main.scss */
 .jobs-list {
   font-family: "futura-pt", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, arial, sans-serif;
   font-size: 24px;
 }
-/* line 152, style/base/_main.scss */
+/* line 154, style/base/_main.scss */
 .jobs-list a:before, .jobs-list a:after {
   color: #fe8500;
   position: absolute;
@@ -1061,7 +1065,7 @@ body:not(.home) .main {
   -o-transition: -o-transform 0.2s, opacity 0.3s;
   transition: transform 0.2s, opacity 0.3s;
 }
-/* line 163, style/base/_main.scss */
+/* line 165, style/base/_main.scss */
 .jobs-list a:before {
   content: '‹';
   left: -10px;
@@ -1071,7 +1075,7 @@ body:not(.home) .main {
   -o-transform: translateX(15px);
   transform: translateX(15px);
 }
-/* line 169, style/base/_main.scss */
+/* line 171, style/base/_main.scss */
 .jobs-list a:after {
   content: '›';
   right: -10px;
@@ -1081,11 +1085,11 @@ body:not(.home) .main {
   -o-transform: translateX(-15px);
   transform: translateX(-15px);
 }
-/* line 175, style/base/_main.scss */
+/* line 177, style/base/_main.scss */
 .jobs-list a {
   position: relative;
 }
-/* line 178, style/base/_main.scss */
+/* line 180, style/base/_main.scss */
 .jobs-list a:hover:before, .jobs-list a:hover:after {
   opacity: 1;
   -webkit-transform: translateX(0px);
@@ -1095,7 +1099,7 @@ body:not(.home) .main {
   transform: translateX(0px);
 }
 
-/* line 185, style/base/_main.scss */
+/* line 187, style/base/_main.scss */
 .footer {
   background: #1e1d24 url("images/footer.png") top center no-repeat;
   -webkit-background-size: cover;
@@ -1105,7 +1109,7 @@ body:not(.home) .main {
   background-size: cover;
 }
 
-/* line 190, style/base/_main.scss */
+/* line 192, style/base/_main.scss */
 .footer-list {
   color: #fff;
   font-family: "futura-pt", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, arial, sans-serif;
@@ -1114,12 +1118,12 @@ body:not(.home) .main {
   font-size: 14px;
   margin-bottom: 0;
 }
-/* line 198, style/base/_main.scss */
+/* line 200, style/base/_main.scss */
 .footer-list li {
   padding: 0 10px;
   position: relative;
 }
-/* line 202, style/base/_main.scss */
+/* line 204, style/base/_main.scss */
 .footer-list li:not(:last-child):after {
   content: '・';
   display: block;
@@ -1132,11 +1136,11 @@ body:not(.home) .main {
   transform: translateY(-50%);
   position: absolute;
 }
-/* line 212, style/base/_main.scss */
+/* line 214, style/base/_main.scss */
 .footer-list a {
   color: #fff;
 }
-/* line 215, style/base/_main.scss */
+/* line 217, style/base/_main.scss */
 .footer-list a:hover {
   color: #fe8500;
 }
@@ -4127,15 +4131,23 @@ html.flexbox {
   padding-left: 0 !important;
 }
 
+/** 
+ * Max width helpers for container 
+ */
+/* line 100, style/generic/_helper.scss */
+.max-width--1200 {
+  max-width: 1200px !important;
+}
+
 /**
  * Pull items full width of `.island` parents.
  */
-/* line 99, style/generic/_helper.scss */
+/* line 107, style/generic/_helper.scss */
 .full-bleed {
   margin-right: -24px !important;
   margin-left: -24px !important;
 }
-/* line 103, style/generic/_helper.scss */
+/* line 111, style/generic/_helper.scss */
 .islet .full-bleed {
   margin-right: -12px !important;
   margin-left: -12px !important;
@@ -4145,7 +4157,7 @@ html.flexbox {
  * Add a help cursor to any element that gives the user extra information on
  * `:hover`.
  */
-/* line 114, style/generic/_helper.scss */
+/* line 122, style/generic/_helper.scss */
 .informative {
   cursor: help !important;
 }
@@ -4153,7 +4165,7 @@ html.flexbox {
 /**
  * Mute an object by reducing its opacity.
  */
-/* line 122, style/generic/_helper.scss */
+/* line 130, style/generic/_helper.scss */
 .muted {
   opacity: 0.5 !important;
   filter: alpha(opacity=50) !important;
@@ -4165,7 +4177,7 @@ html.flexbox {
    <p class=proceed><a href=#>Read more...</a></p>
  *
  */
-/* line 134, style/generic/_helper.scss */
+/* line 142, style/generic/_helper.scss */
 .proceed {
   text-align: right !important;
 }
@@ -4176,7 +4188,7 @@ html.flexbox {
    <a href=# class=go>Read more</a>
  *
  */
-/* line 145, style/generic/_helper.scss */
+/* line 153, style/generic/_helper.scss */
 .go:after {
   content: "\00A0" "\00BB" !important;
 }
@@ -4184,7 +4196,7 @@ html.flexbox {
 /**
  * Apply capital case to an element (usually a `strong`).
  */
-/* line 153, style/generic/_helper.scss */
+/* line 161, style/generic/_helper.scss */
 .caps {
   text-transform: uppercase !important;
 }
@@ -4193,7 +4205,7 @@ html.flexbox {
  * Hide content off-screen without resorting to `display:none;`, also provide
  * breakpoint specific hidden elements.
  */
-/* line 173, style/generic/_helper.scss */
+/* line 181, style/generic/_helper.scss */
 .accessibility,
 .visuallyhidden {
   border: 0 !important;
@@ -4207,7 +4219,7 @@ html.flexbox {
 }
 
 @media only screen and (max-width: 480px) {
-  /* line 180, style/generic/_helper.scss */
+  /* line 188, style/generic/_helper.scss */
   .accessibility--palm,
   .visuallyhidden--palm {
     border: 0 !important;
@@ -4221,7 +4233,7 @@ html.flexbox {
   }
 }
 @media only screen and (min-width: 481px) and (max-width: 1023px) {
-  /* line 180, style/generic/_helper.scss */
+  /* line 188, style/generic/_helper.scss */
   .accessibility--lap,
   .visuallyhidden--lap {
     border: 0 !important;
@@ -4235,7 +4247,7 @@ html.flexbox {
   }
 }
 @media only screen and (min-width: 481px) {
-  /* line 180, style/generic/_helper.scss */
+  /* line 188, style/generic/_helper.scss */
   .accessibility--lap-and-up,
   .visuallyhidden--lap-and-up {
     border: 0 !important;
@@ -4249,7 +4261,7 @@ html.flexbox {
   }
 }
 @media only screen and (max-width: 1023px) {
-  /* line 180, style/generic/_helper.scss */
+  /* line 188, style/generic/_helper.scss */
   .accessibility--portable,
   .visuallyhidden--portable {
     border: 0 !important;
@@ -4263,7 +4275,7 @@ html.flexbox {
   }
 }
 @media only screen and (min-width: 1024px) {
-  /* line 180, style/generic/_helper.scss */
+  /* line 188, style/generic/_helper.scss */
   .accessibility--desk,
   .visuallyhidden--desk {
     border: 0 !important;
@@ -4277,7 +4289,7 @@ html.flexbox {
   }
 }
 @media only screen and (min-width: 1200px) {
-  /* line 180, style/generic/_helper.scss */
+  /* line 188, style/generic/_helper.scss */
   .accessibility--desk-wide,
   .visuallyhidden--desk-wide {
     border: 0 !important;

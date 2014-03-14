@@ -126,7 +126,7 @@
 
       <?php } wp_reset_postdata(); ?>
       
-        <div class="nine-tenths  flush--center">
+        <div class="nine-tenths  flush--center  max-width--1200">
           <div class="grid  team">
 
             <?php
@@ -161,7 +161,7 @@
     </section>
 
     <section class="section section--grey">
-      <div class="nine-tenths flush--center">
+      <div class="nine-tenths flush--center  max-width--1200">
         <div class="grid">
           <div class="grid__item two-fifths  [ lap-one-whole palm-one-whole ]">
             <h3 class="beta">Are you the next Symbioker?</h3>

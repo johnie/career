@@ -134,6 +134,8 @@ body:not(.home) .main{
   }
 
   @include media-query(palm) {
+    padding: 30px 20px;
+
     .nine-tenths{
       width: 100% !important;
     }
