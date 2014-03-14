@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title><?php wp_title(''); ?></title>
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui" />
   <link rel="icon" type="image/png" href="<?php bloginfo('template_url' ); ?>/images/favicon.png">
   <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>">
   <script src="<?php bloginfo('template_url' ); ?>/js/modernizr.js"></script>

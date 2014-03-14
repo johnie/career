@@ -6,6 +6,14 @@
   @extend .cf;
   padding-top: 6%;
   padding-bottom: 6%;
+
+  @include media-query(palm) {
+    display: none;
+  }
+
+  @include media-query(lap) {
+    display: none;
+  }
 }
 
 .cl__item{

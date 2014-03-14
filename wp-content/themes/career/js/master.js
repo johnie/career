@@ -56,6 +56,7 @@ function menuToggle(element) {
   menuBtn.click(function(e){
     e.preventDefault();
     $(this).toggleClass("open");
+    $("html").toggleClass("html--oh");
   });
 }
 
@@ -111,7 +112,9 @@ $(function(){
   showMeTheGoods(".cl__item", "top");
   showMeTheGoods(".employee", "left");
   $(document).ready(function(){
-    window.scrollReveal = new scrollReveal();
+    if ( !Modernizr.touch ) {
+      window.scrollReveal = new scrollReveal();
+    }
   });
 });
 

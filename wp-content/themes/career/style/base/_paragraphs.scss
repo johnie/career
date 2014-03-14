@@ -24,4 +24,8 @@ p{
   .section &:last-of-type{
     margin-bottom: 0px;
   }
+
+  @media (max-width: $phone-size) {
+    font-size: 1.2em;
+  }
 }

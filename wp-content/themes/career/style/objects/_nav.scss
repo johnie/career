@@ -293,6 +293,10 @@
       color: $brand-color;
     }
   }
+
+  @include media-query(palm) {
+    font-size: 6px;
+  }
 }
 
 .nav-desc{
@@ -303,6 +307,10 @@
   border-bottom: 1px solid #505050;
   text-transform: uppercase;
   letter-spacing: 1px;
+
+  @include media-query(palm) {
+    font-size: .8em;
+  }
 }
 
 .social-menu{
@@ -333,6 +341,17 @@
 
     &:hover{
       color: $brand-color;
+    }
+  }
+
+  @include media-query(palm) {
+    li{
+      display: block;
+      text-align: center !important;
+    }
+
+    a{
+      font-size: 1.6em;
     }
   }
 }

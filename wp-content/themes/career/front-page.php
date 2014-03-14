@@ -40,6 +40,8 @@
 
       <?php } wp_reset_postdata(); ?>
 
+      <?php if( !wp_is_mobile() ) { ?>
+
       <div class="flush--center nine-tenths">
   
         <ul class="culture-list">
@@ -62,6 +64,8 @@
 
       </div>
 
+      <?php } ?>
+
       <div class="container" data-scroll-reveal="enter from the bottom after .3s">
         <p>We get stuff done. We have fun. We test. We learn. We work well together. We think big. We care about the product we are building. We push boundaries.</p>
 
@@ -69,6 +73,8 @@
       </div>
 
     </section>
+
+    <?php if( !wp_is_mobile() ) { ?>
 
     <section class="section hard">
       
@@ -104,6 +110,8 @@
     
     </section>
 
+    <?php } // End of is mobile ?>
+
     <section class="section">
       <?php
         $team_page = new WP_Query( 'pagename=team' );
@@ -126,7 +134,7 @@
               if ( have_posts() ) : while ( have_posts() ) : the_post();
             ?>
 
-              <div class="grid__item  one-third  employee">
+              <div class="grid__item  one-third  employee [ lap-one-half  palm-one-whole ]">
                 <figure class="employee__figure">
                   <a href="<?php the_permalink(); ?>" class="employee__readmore"><div class="readmore__wrap">More about <span><?php $title = current(explode(' ', get_the_title())); echo $title; ?><span></div></a>
                   <?php $employeeImage = get_field('employee_image');?>
@@ -155,12 +163,12 @@
     <section class="section section--grey">
       <div class="nine-tenths flush--center">
         <div class="grid">
-          <div class="grid__item two-fifths">
+          <div class="grid__item two-fifths  [ lap-one-whole palm-one-whole ]">
             <h3 class="beta">Are you the next Symbioker?</h3>
 
             <p class="krymp">We are looking for smart and talented individuals who want to contribute to our team in a big way. We want people who love the idea of chatting with clients and learning how to make our clients successful at what they do. Most of all, we want you to be passionate about working together with us to build something awesome!</p>
           </div>
-          <div class="grid__item three-fifths">
+          <div class="grid__item three-fifths  [ lap-one-whole palm-one-whole ]">
             <h3 class="beta">Find your fit!</h3>
 
             <p>We are actively looking for new teammates in these positions:</p>

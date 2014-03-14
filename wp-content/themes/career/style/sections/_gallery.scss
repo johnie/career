@@ -43,4 +43,8 @@
   &:hover::before{
     background-color: rgba(0, 0, 0, 0);    
   }
+
+  @include media-query(palm) {
+    width: 20%;
+  }
 }
