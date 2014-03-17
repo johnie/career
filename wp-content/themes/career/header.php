@@ -50,8 +50,7 @@
       <a href="#" class="menu-btn" id="menu-btn"><span>Menu</span></a>
     </div>
 
-    <section class="gradient-expander">
-    </section>
+    <section class="gradient-expander"></section>
   
   </header>
 

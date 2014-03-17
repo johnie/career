@@ -47,9 +47,9 @@
       </small>
 
       <ul class="social-menu  flexbox">
-        <li class="flexbox__item"><a href="#">Facebook</a></li>
-        <li class="flexbox__item"><a href="#">Twitter</a></li>
-        <li class="flexbox__item"><a href="#">LinkedIn</a></li>
+        <li class="flexbox__item"><a href="https://www.facebook.com/pages/Symbio-Sweden/503207209797214">Facebook</a></li>
+        <li class="flexbox__item"><a href="https://twitter.com/symbiosweden">Twitter</a></li>
+        <li class="flexbox__item"><a href="http://www.linkedin.com/company/symbio-sweden">LinkedIn</a></li>
       </ul>
     </div>
 
