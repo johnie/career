@@ -64,12 +64,12 @@
 
       </div>
 
-      <?php } ?>
+      <?php } else { echo "<br>"; } ?>
 
       <div class="container" data-scroll-reveal="enter from the bottom after .3s">
         <p>We get stuff done. We have fun. We test. We learn. We work well together. We think big. We care about the product we are building. We push boundaries.</p>
 
-        <p>We love what we do & we take the time to do it right. <a href="<?php echo get_permalink( get_page_by_path( 'culture' ) ) ?>">Wanna know more?</a></p>
+        <p>We love what we do &amp; we take the time to do it right. <a href="<?php echo get_permalink( get_page_by_path( 'culture' ) ) ?>">Wanna know more?</a></p>
       </div>
 
     </section>
@@ -153,7 +153,7 @@
             <?php endwhile; endif; wp_reset_query(); ?>
 
             <div class="grid__item one-whole  team__more">
-              <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Team' ) ) ); ?>" class="btn btn--small btn--black btn--soft">Meet the rest of the team</a>
+              <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Team' ) ) ); ?>" class="btn btn--small btn--black btn--soft btn--team">Meet the rest of the team</a>
             </div>
 
           </div>

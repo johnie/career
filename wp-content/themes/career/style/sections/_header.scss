@@ -51,6 +51,7 @@
     text-align: center;
     left: 10px;
     right: 10px;   
+    @include vendor(transform, translateY(-55%));
   }
 }
 

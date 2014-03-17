@@ -182,6 +182,10 @@ body:not(.home) .main{
       @include vendor(transform, translateX(0px));
     }
   }
+
+  @include media-query(palm) {
+    @include font-size(18px);
+  }
 }
 
 .footer{
@@ -209,6 +213,16 @@ body:not(.home) .main{
       @include vendor(transform, translateY(-50%));
       position: absolute;
     }
+
+    @include media-query(palm) {
+      padding: 0;
+      display: block;
+      width: 100%;
+
+      &:after{
+        display: none !important;
+      }
+    }
   }
 
   a{
@@ -217,5 +231,10 @@ body:not(.home) .main{
     &:hover{
       color: $brand-color;
     }
+  }
+
+  @include media-query(palm) {
+    @include font-size(16px);
+    text-align: center;
   }
 }

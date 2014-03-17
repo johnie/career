@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui" />
   <link rel="icon" type="image/png" href="<?php bloginfo('template_url' ); ?>/images/favicon.png">
   <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>">
-  <script src="<?php bloginfo('template_url' ); ?>/js/modernizr.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
   <script type="text/javascript" src="//use.typekit.net/zoc3xxu.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <?php wp_head(); ?>
